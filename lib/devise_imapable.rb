@@ -3,7 +3,7 @@ require 'devise'
 
 require 'devise_imapable/model'
 require 'devise_imapable/schema'
-require 'devise_imapable/imap_connection'
+require 'devise_imapable/imap_adapter'
 
 module Devise
   # imap server address for authentication.
