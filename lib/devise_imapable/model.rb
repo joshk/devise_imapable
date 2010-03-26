@@ -62,6 +62,9 @@ module Devise
         #   end
         #
         def find_or_initialize_for_authentication(conditions)
+          unless conditions[:email] && conditions[:email].include?('@')
+            conditions[:email] = "#{conditions[:email]}@#{Devise.default_email_suffix}"
+          end
           find(:first, :conditions => conditions) || new(conditions)
         end
       end

@@ -9,6 +9,10 @@ module Devise
   # imap server address for authentication.
   mattr_accessor :imap_server
   @@imap_server = nil
+
+  # default email suffix
+  mattr_accessor :default_email_suffix
+  @@imap_server = nil
 end
 
 # Add +:imapable+ strategy to defaults.
