@@ -33,4 +33,4 @@ module Devise
   end
 end
 
-Warden::Strategies.add(:authenticatable, Devise::Strategies::Imapable)
+Warden::Strategies.add(:imapable, Devise::Strategies::Imapable)
