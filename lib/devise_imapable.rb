@@ -4,6 +4,7 @@ require 'devise'
 require 'devise_imapable/model'
 require 'devise_imapable/schema'
 require 'devise_imapable/imap_adapter'
+require 'devise_imapable/routes'
 
 module Devise
   # imap server address for authentication.
@@ -22,7 +23,3 @@ Devise.add_module(:imapable,
                   :controller => :sessions,
                   :model  => 'devise_imapable/model',
                   :routes => :imapable)
-
-
-# load the routes
-require 'devise_imapable/routes'
