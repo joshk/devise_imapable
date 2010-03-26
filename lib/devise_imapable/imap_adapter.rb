@@ -10,8 +10,8 @@ module Devise
       true
     rescue Net::IMAP::ResponseError => e
       false
-    # ensure
-    #   imap.disconnect
+    ensure
+      imap.disconnect
     end
 
   end

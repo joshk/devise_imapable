@@ -12,7 +12,7 @@ module Devise
 
   # default email suffix
   mattr_accessor :default_email_suffix
-  @@imap_server = nil
+  @@default_email_suffix = nil
 end
 
 # Add +:imapable+ strategy to defaults.
