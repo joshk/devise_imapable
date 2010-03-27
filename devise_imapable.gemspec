@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "VERSION",
+     "devise_imapable.gemspec",
      "lib/devise_imapable.rb",
      "lib/devise_imapable/imap_adapter.rb",
      "lib/devise_imapable/model.rb",
