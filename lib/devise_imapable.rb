@@ -1,7 +1,6 @@
 # encoding: utf-8
 require 'devise'
 
-require 'devise_imapable/model'
 require 'devise_imapable/schema'
 require 'devise_imapable/imap_adapter'
 require 'devise_imapable/routes'
