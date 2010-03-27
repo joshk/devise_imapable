@@ -2,6 +2,8 @@ require 'net/imap'
 
 module Devise
 
+  # simple adapter for imap credential checking
+  # (i don't like to add stuff like this directly to the model)
   module ImapAdapter
 
     def self.valid_credentials?(username, password)
