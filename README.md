@@ -1,7 +1,7 @@
 Devise - Imapable
 =================
 
-Devise-Imapable is a imap based authentication strategy for the [Devise](plataformatec/devise) authentication framework.
+Devise-Imapable is a imap based authentication strategy for the [Devise](github.com/plataformatec/devise) authentication framework.
 
 If you are building applications for use within your organisation which require authentication and don't have access to a LDAP server, using imap can be a great alternative.
 
@@ -15,7 +15,7 @@ Currently this can only be installed as a plugin.
 *Gem coming soon!*
 
 
-**And don't forget to add [Devise](plataformatec/devise)!**
+**And don't forget to add [Devise](github.com/plataformatec/devise)!**
 
 either in config/environment.rb:
 
@@ -105,8 +105,8 @@ So remember ...
 References
 ----------
 
-* [Devise](plataformatec/devise)
-* [Warden](hassox/warden)
+* [Devise](github.com/plataformatec/devise)
+* [Warden](github.com/hassox/warden)
 
 
 TODO
@@ -123,5 +123,7 @@ TODO
 - investigate how well this works with other devise modules like http\_authenticatable, token\_authenticatable lockable, confirmable, and activatable
 
 
+
 Released under the MIT license
+
 Copyright (c) 2010 Josh Kalderimis,
