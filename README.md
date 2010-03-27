@@ -114,6 +114,10 @@ TODO
 
 - email validation
 
+- add update\_with\_password to the model, similar to Authenticatable
+
+- assert Authenticatable is not being used
+
 - assert imap\_server is present, and warn if default\_email\_suffix isn't present
 
 - tests, tests, tests
