@@ -21,4 +21,4 @@ Devise.add_module(:imapable,
                   :strategy   => true,
                   :controller => :sessions,
                   :model  => 'devise_imapable/model',
-                  :routes => :imap_authenticate)
+                  :routes => :imapable)
