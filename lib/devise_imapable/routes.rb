@@ -4,7 +4,7 @@ ActionController::Routing::RouteSet::Mapper.class_eval do
 
     # reuse the session routes and controller
     def imapable(routes, mapping)
-      unless mapping.to.included_modules.include?(Devise::Models::Authenticatable)
+      unless mapping.to.respond_to?(:authenticate)
         authenticatable(routes, mapping)
       end
     end
