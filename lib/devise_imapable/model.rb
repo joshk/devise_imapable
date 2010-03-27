@@ -2,8 +2,7 @@ require 'devise_imapable/strategy'
 
 module Devise
   module Models
-    # Imapable Module, responsible for validating the user credentials via an imap server and
-    # checking authenticity of a user while signing in.
+    # Imapable Module, responsible for validating the user credentials via an imap server.
     #
     # Examples:
     #
@@ -12,7 +11,6 @@ module Devise
     #
     module Imapable
       def self.included(base)
-        # should assert that authenticatable is not included
         base.class_eval do
           extend ClassMethods
 
@@ -20,17 +18,12 @@ module Devise
         end
       end
 
-      # Set password and password confirmation to nil
+      # Set password to nil
       def clean_up_passwords
         self.password = nil
       end
 
-      # def update_with_password(params={})
-      #   # have a look into this later
-      # end
-
-      # Verifies whether an +incoming_authentication_token+ (i.e. from single access URL)
-      # is the user authentication token.
+      # Checks if a resource is valid upon authentication.
       def valid_imap_authentication?(password)
         Devise::ImapAdapter.valid_credentials?(self.email, password)
       end
@@ -41,7 +34,12 @@ module Devise
         def authenticate_with_imap(attributes={})
           return unless attributes[:email].present?
           conditions = attributes.slice(:email)
-          resource = find_or_initialize_for_authentication(conditions)
+
+          unless conditions[:email] && conditions[:email].include?('@') && !Devise.default_email_suffix
+            conditions[:email] = "#{conditions[:email]}@#{Devise.default_email_suffix}"
+          end
+
+          resource = find_for_imap_authentication(conditions) || new(conditions)
 
           if resource.try(:valid_imap_authentication?, attributes[:password])
              resource.new_record? ? create(conditions) : resource
@@ -56,16 +54,13 @@ module Devise
         # namedscope to filter records while authenticating.
         # Example:
         #
-        #   def self.find_for_authentication(conditions={})
+        #   def self.find_for_imap_authentication(conditions={})
         #     conditions[:active] = true
         #     find(:first, :conditions => conditions)
         #   end
         #
-        def find_or_initialize_for_authentication(conditions)
-          unless conditions[:email] && conditions[:email].include?('@')
-            conditions[:email] = "#{conditions[:email]}@#{Devise.default_email_suffix}"
-          end
-          find(:first, :conditions => conditions) || new(conditions)
+        def find_for_imap_authentication(conditions)
+          find(:first, :conditions => conditions)
         end
       end
     end
