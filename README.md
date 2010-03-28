@@ -1,7 +1,7 @@
 Devise - Imapable
 =================
 
-Devise-Imapable is a imap based authentication strategy for the [Devise](github.com/plataformatec/devise) authentication framework.
+Devise-Imapable is a imap based authentication strategy for the [Devise](http://github.com/plataformatec/devise) authentication framework.
 
 If you are building applications for use within your organisation which require authentication and don't have access to a LDAP server, using imap can be a great alternative.
 
@@ -12,10 +12,10 @@ Currently this can only be installed as a plugin.
 
     script/plugin install git@github.com:joshk/devise_imapable.git
 
-*Gem coming soon!*
+*Now in gem form, install notes coming soon*
 
 
-**And don't forget to add [Devise](github.com/plataformatec/devise)!**
+**And don't forget to add [Devise](http://github.com/plataformatec/devise)!**
 
 either in config/environment.rb:
 
@@ -35,7 +35,7 @@ First the schema :
 
     create_table :users do |t|
 
-      t.facebook_connectable
+      t.imapable
 
     end
 
@@ -105,12 +105,14 @@ So remember ...
 References
 ----------
 
-* [Devise](github.com/plataformatec/devise)
-* [Warden](github.com/hassox/warden)
+* [Devise](http://github.com/plataformatec/devise)
+* [Warden](http://github.com/hassox/warden)
 
 
 TODO
 ----
+
+- add notes about gem
 
 - email validation
 
