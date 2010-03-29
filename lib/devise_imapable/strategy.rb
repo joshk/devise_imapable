@@ -16,7 +16,7 @@ module Devise
         if resource = mapping.to.authenticate_with_imap(params[scope])
           success!(resource)
         else
-          fail!(:invalid)
+          fail(:invalid)
         end
       end
 
