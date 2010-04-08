@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{devise_imapable}
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Josh Kalderimis"]
-  s.date = %q{2010-03-27}
+  s.date = %q{2010-04-08}
   s.description = %q{For when you don't have access to LDAP}
   s.email = %q{josh.kalderimis@gmail.com}
   s.extra_rdoc_files = [
