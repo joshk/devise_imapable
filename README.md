@@ -8,6 +8,8 @@ If you are building applications for use within your organisation which require 
 Installation
 ------------
 
+**Please note that Devise-Imapable only works with Devise 1.0.5 at the moment, changes for 1.0.6 will be made soon**
+
 Currently this can only be installed as a plugin.
 
     script/plugin install git@github.com:joshk/devise_imapable.git
