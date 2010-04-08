@@ -35,7 +35,7 @@ module Devise
           return unless attributes[:email].present?
           conditions = attributes.slice(:email)
 
-          unless conditions[:email] && conditions[:email].include?('@') && !Devise.default_email_suffix
+          unless conditions[:email] && conditions[:email].include?('@') && Devise.default_email_suffix
             conditions[:email] = "#{conditions[:email]}@#{Devise.default_email_suffix}"
           end
 
